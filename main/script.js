@@ -94,7 +94,8 @@ function goToWorkout(e) {
 }
 
 function pageLoad() {
-  createObjects(JSON.parse(localStorage.getItem('workoutList')));
+  if (JSON.parse(localStorage.getItem('workoutList')) !== null)
+    createObjects(JSON.parse(localStorage.getItem('workoutList')));
   loadMap();
   renderWorkoutsOnList(container.getWorkouts());
 }
